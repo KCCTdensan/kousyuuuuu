@@ -1,6 +1,7 @@
 OPTS := --pdf-engine=lualatex \
 	-V documentclass=ltjsarticle -V indent=true \
-	-N -F pandoc-crossref -B before.tex
+	-N -B before.tex
+#	-N -F pandoc-crossref -B before.tex
 
 .PHONY: all clean
 
