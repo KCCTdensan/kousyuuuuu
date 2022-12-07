@@ -1,0 +1,88 @@
+/********************************
+  おまじない
+********************************/
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/********************************
+  レイアウト関連
+********************************/
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 48rem;
+  height: 100%;
+  margin: auto;
+  background: lightgray;
+}
+
+.header {
+  display: flex;
+  padding: 0 2rem;
+  align-items: center;
+  justify-content: space-between;
+  background: skyblue;
+}
+
+#history {
+  overflow: scroll;
+}
+
+#new-message-form {
+  display: flex;
+  height: 4rem;
+  margin: 1rem;
+  margin-top: auto;
+}
+
+#new-message-text {
+  flex-grow: 1;
+  padding: 1rem;
+}
+
+.button-submit {
+  width: 6rem;
+  color: white;
+  background: red;
+  border: none;
+}
+
+/********************************
+  その他の部品
+********************************/
+
+.message {
+  display: flex;
+  margin: 1rem;
+  padding: 1rem;
+  background: palegreen;
+}
+
+.message p {
+  margin: 0;
+}
+
+.message-head {
+  min-width: 4rem;
+}
+
+.message-body {
+  flex-grow: 1;
+}
+
+.message-body::before {
+  content: ">";
+  margin-right: 1rem;
+}
+
+.message-tail {
+  color: gray;
+}
