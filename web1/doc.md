@@ -39,7 +39,7 @@ JavaScriptは作成したWebページに動きを付けたり，サーバと通�
 
 JavaScriptはJavaとはまったく違うので気を付けましょう。
 
-
+## HTMLについて
 ```html
 <!DOCTYPE html>
 <html>
@@ -60,7 +60,7 @@ JavaScriptはJavaとはまったく違うので気を付けましょう。
 
 いきなりこれを見ても意味がわからないかもしれませんが大丈夫です。これから一つずつ解説していきます。
 
-## HTMLについて
+
 HTMLとはHyper Text Markup Languageの略で主にWebページの表示をするための言語です。
 ~~HTMLはプログラミング言語です~~ ←違います。
 
@@ -73,6 +73,90 @@ HTMLは基本的に入れ子構造にして書いていきます。そして，�
 
 今回のメインではないのであまり深い解説はしません。わからないことがあれば遠慮無く近くの先輩や有識者に聞いてください。
 
+## CSSについて
+CSSはHTMLの要素やクラスやidを指定してそのデザインを編集するための言語です。
+例えば次のようなHTMLのコードがあるとします。
+```html
+<h1>タイトル</h1>
+```
+このときこの「タイトル」という文字の色を変更したい場合はこのようにCSS
+を書きます。
+```css
+h1 {
+    color: red;
+}
+```
+このように要素を指定してその要素のプロパティを設定すればHTMLのデザインをより
+凝ったものにできます。これがCSSです。
+
+## JavaScriptについて
+1年生のみなさんは情報基礎でpythonをやっていると思うのでpythonとJavaScriptの
+違う部分だけを解説したいと思います。
+### 変数の宣言方法
+pythonでは
+```python
+a = 0
+print(a) # => 0
+```
+ですがJavaScriptだと
+```javascript
+let a = 0;
+const b = 1;
+console.log(a);
+console.log(b);
+```
+こうなります。letとconstの違いは値を再代入できるかどうかです。
+後で解説するfor文の時や再代入すると決まっているとき以外は基本constを使いましょう。
+
+### if文
+pythonでは
+```python
+if a % 2 == 0 :
+    print("odd Number")
+else :
+    print("even Number")
+```
+ですがJavaScriptだと
+```javascript
+if(a % 2 == 0){
+    console.log("odd Number");
+} else {
+    console.log("even Number");
+}
+```
+こうなります。JavaScriptではif文はインデントではなく{}で区切ります。
+また，pythonでの```elif```はJavaScriptでは```else if```なので
+注意しましょう。
+
+#### 真偽値
+pythonではそれぞれ```True, False```と表現しますが，JavaScriptでは
+```true, false```と小文字になることに注意しましょう。
+
+### for文
+ここは大きく違うので気をつけましょう。
+
+pythonのfor文
+```python
+for i in range(10):
+    print(i) 
+```
+JavaScriptのfor文
+```javascript
+for (let i = 0; i < 10; i++){
+    console.log(i);
+}
+```
+これはどちらも0から9を出力するプログラムです。
+JavaScriptの書き方を初めてみる人もいると思います。
+まず```let i = 0;```でfor文で使う変数であるiを初期化しています。
+JavaScriptやC言語などはこの初期化が必要なので注意してください。
+そして，次の```i < 10;```はこの論理式(true,falseを返す式)がtrueの間{}の中の処理を
+ループするという意味を持ちます。ここではiが10未満の時にループします。
+最後の```i++```はループが終わった時に実行される処理を書きます。
+ここで```i++```という見慣れない式が出てきますがこれはインクリメントという処理です。
+pythonの```i += 1```と同じ意味を持ちます。また，```i--```はpythonの
+```i -= 1```と同じ意味を持ちます。
+ここではこの```i++```という式を最後に記述することで， ループの度にiを1ずつ増やしています。
 
 
 
