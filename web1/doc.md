@@ -100,10 +100,10 @@ print(a) # => 0
 ```
 ですがJavaScriptだと
 ```javascript
-let a = 0;
-const b = 1;
-console.log(a);
-console.log(b);
+let a = 0
+const b = 1
+console.log(a)
+console.log(b)
 ```
 こうなります。letとconstの違いは値を再代入できるかどうかです。
 後で解説するfor文の時や再代入すると決まっているとき以外は基本constを使いましょう。
@@ -118,12 +118,13 @@ else :
 ```
 ですがJavaScriptだと
 ```javascript
-if(a % 2 == 0){
-    console.log("odd Number");
+if(a % 2 === 0){
+    console.log("odd Number")
 } else {
-    console.log("even Number");
+    console.log("even Number")
 }
 ```
+
 こうなります。JavaScriptではif文はインデントではなく{}で区切ります。
 また，pythonでの```elif```はJavaScriptでは```else if```なので
 注意しましょう。
@@ -143,7 +144,7 @@ for i in range(10):
 JavaScriptのfor文
 ```javascript
 for (let i = 0; i < 10; i++){
-    console.log(i);
+    console.log(i)
 }
 ```
 これはどちらも0から9を出力するプログラムです。
@@ -160,13 +161,62 @@ pythonの```i += 1```と同じ意味を持ちます。また，```i--```はpytho
 関数とは複数の処理をまとめたものです。例えば次のようなものがあります。
 ```javascript
 function sayHello() {
-    console.log("Hello!!!");
+    console.log("Hello!!!")
 }
 
 sayHello(); // =>Hello!
 ```
 関数は```function 関数名(引数1，引数2，・・・){処理}```という書き方をすると宣言できます。
 宣言した関数を使用するには``関数名()``と書くとその関数に定義された処理が実行されます。
+
+関数には値を受け取る機能があります。
+値を受け取る場合の関数は次のように記述します。
+```javascript
+function sum (a, b){
+    return a + b
+}
+
+const ans = sum(3, 5)
+console.log(sum)  //=> 8
+```
+このように関数名の後の()に関数内で使う変数を記述し，関数内で使用することができます。
+このときこの変数のことをその関数の引数と言います。
+```return```の後に続けて値を記述することで，その関数の戻り値を指定することができます。
+戻り値とは関数などが処理を終了する際に、呼び出し元に対して渡す値のことです。
+5行目のように戻り値をそのまま変数に代入することもできます。
+#### 無名関数
+JavaScriptは変数に関数を代入することができます。その時に代入された関数を無名関数と言います。
+無名関数は次のように記述します。
+```javascript
+const div = function (a, b){
+    return a / b
+}
+
+console.log(div(6, 3)) // => 2
+```
+変数に入れても関数の基本的な使い方は変わりません。関数の定義方法の違いくらいに考えればOKです。
+
+#### アロー関数
+無名関数と似ていますがもっと簡単に関数を記述できるものがアロー関数です。
+アロー関数は次のように定義します。
+```javascript
+const times = (a, b) => a * b
+console.log(times(6, 9)) // => 54
+
+const twice = a => a * 2
+console.log(twice(4)) // => 8
+
+const isEvemNum = a => {
+    if(a % 2 === 0){
+        return true
+    } else {
+        return false
+    }
+}
+console.log(isEvemNum(12)) // => true
+```
+このようにJavaScriptは関数を少ない記述量で書くことができます。
+
 
 
 
